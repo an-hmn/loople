@@ -5,6 +5,7 @@
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+<<<<<<< HEAD
 
    <script src="http://code.createjs.com/easeljs-0.7.1.min.js"></script>
    <script src="http://code.createjs.com/tweenjs-0.5.1.min.js"></script>
@@ -22,8 +23,36 @@
       <li><%= link_to("LoopTest", kriss_path ) %></li>
     </ul>
  </nav>
+=======
+  <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+  <!-- these are for charlies animations -->
+ <script src="http://code.createjs.com/easeljs-0.7.1.min.js"></script>
+  <script src="http://code.createjs.com/tweenjs-0.5.1.min.js"></script>
+  <script src="http://code.createjs.com/createjs-2013.12.12.min.js"></script>
+</head>
+>>>>>>> master
 
-<%= yield %>
+
+<body class="<%= params[:controller] %> <%= params[:action] %>">
+  <div id="column">
+    <nav id="main">
+      <ul>
+        <%== usernav %>
+        <li><%= link_to("Users", users_path ) %></li>
+        <li><%= link_to("Loops", loops_path ) %></li>
+        <li><%= link_to("Animations Test", charlie_path ) %></li>
+        <li><%= link_to("Sound Test", anne_path ) %></li>
+        <li><%= link_to("Loop Test", kriss_path ) %></li>
+      </ul>
+   </nav>    
+    
+  </div>
+<canvas id="myCanvas" width="1000" height="500"> </canvas>
+
+  <div id="content">
+    <%= yield %>
+  </div>
+
 
 </body>
 </html>
